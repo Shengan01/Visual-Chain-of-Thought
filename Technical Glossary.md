@@ -257,3 +257,45 @@ Use these phrases instead of simple descriptions:
 | **AOI (Automated Optical Inspection)** | Machine vision defect detection |
 | **Panel Grading** | Sorting panels by quality (A, B, C grade) |
 | **Binning** | Grouping components by measured characteristics |
+
+---
+
+## TCL CSOT Proprietary Technologies
+
+> TCL's display subsidiary China Star Optoelectronics Technology (CSOT) develops proprietary technologies for advanced panels.
+
+### Display Technologies
+
+| Term | Definition |
+|------|------------|
+| **HVA (High-contrast Vertical Alignment)** | CSOT's proprietary VA-type LCD technology with enhanced contrast ratios exceeding 5000:1; uses multi-domain alignment for improved viewing angles while maintaining VA's superior blacks |
+| **ADS Pro** | TCL's advanced IPS-type technology with enhanced transmittance and color accuracy; competing with LG's IPS and Samsung's PLS |
+| **MLED (Mini-LED)** | Backlight technology using thousands of microscale LEDs for precise local dimming zones; flagship feature in TCL's premium LCD TVs |
+| **QD-Mini LED** | Combination of quantum dot color enhancement with mini-LED backlighting; TCL's premium tier technology |
+| **NXTPAPER** | TCL's paper-like display technology for tablets using full-color reflective panels; low blue light emission |
+
+### OLED Technologies (CSOT Development)
+
+| Term | Definition |
+|------|------------|
+| **IJP OLED (Inkjet-Printed OLED)** | CSOT's printing-based OLED deposition technology for large panels; more cost-effective than evaporation methods |
+| **WOLED (White OLED)** | Large-panel OLED using white emitters with color filters; CSOT's approach for TV-sized displays |
+| **Oxide TFT Backplane** | IGZO-based backplane technology enabling higher resolution and lower power consumption for OLED panels |
+
+### Manufacturing Processes (CSOT-specific)
+
+| Term | Definition |
+|------|------------|
+| **Gen 8.5 Fab** | TCL CSOT's primary LCD production line (2200mm × 2500mm substrates); produces TV-sized panels |
+| **Gen 8.6 Fab (t9)** | CSOT's newest factory in Guangzhou; increased efficiency for IT panels |
+| **Gen 11 Fab** | Ultra-large substrate line (3370mm × 2940mm); enables 75"+ panels with minimal cuts |
+| **LTPS Line** | Low-temperature polysilicon production for high-PPI mobile displays |
+
+### Quality & Defect Terms (TCL-specific)
+
+| Term | Definition |
+|------|------------|
+| **ADC (Automatic Defect Classification)** | AI-powered defect categorization system in CSOT production lines |
+| **Smart Factory 4.0** | TCL's automated manufacturing initiative with real-time quality monitoring |
+| **Panel Rescue** | Post-detection repair procedures for recoverable defects |
+| **Mura Compensation** | Digital correction system that adjusts pixel voltages to reduce visible mura |

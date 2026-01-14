@@ -652,3 +652,110 @@ flowchart LR
 | Polarizer Application | Water lines, bubbles, corrosion, placement errors |
 | TFE Encapsulation (OLED) | Moisture ingress, dark spot growth, color shift |
 | Final Assembly | Surface contamination, light leakage, backlight bleeding |
+
+---
+
+## Multi-Resolution Reasoning Framework
+
+> **Problem**: Standard MLLMs resize images (e.g., to 448×448), losing critical pixel-level defect information. This framework enables reasoning across multiple resolution scales.
+
+### When to Apply Multi-Resolution Analysis
+
+```mermaid
+flowchart TD
+    A["Input: Full Panel Image"] --> B{"Defect visible at global scale?"}
+    
+    B -->|"Yes, clearly visible"| C["Standard RCA Path"]
+    B -->|"Partially visible"| D["Multi-Resolution Analysis"]
+    B -->|"Suspected but unclear"| D
+    
+    D --> E["Step 1: Global Localization"]
+    E --> F["Step 2: Region Cropping"]
+    F --> G["Step 3: High-Res Analysis"]
+    G --> H["Step 4: Context Integration"]
+    H --> I["Final Root Cause Diagnosis"]
+    
+    C --> I
+    
+    style D fill:#ffffcc
+    style E fill:#e6f3ff
+    style F fill:#e6f3ff
+    style G fill:#e6f3ff
+    style H fill:#e6f3ff
+```
+
+### Multi-Resolution RCA Template
+
+```mermaid
+flowchart TD
+    subgraph Global["🔍 Global View (Full Panel)"]
+        G1["Identify suspicious regions"]
+        G2["Assess defect distribution pattern"]
+        G3["Note panel location context"]
+    end
+    
+    subgraph Crop["✂️ Crop Decision"]
+        C1{"Defect type requires\nmicroscopic analysis?"}
+        C1 -->|"Pixel defects"| C2["Crop: 64×64 px region"]
+        C1 -->|"Line defects"| C3["Crop: 256×64 or 64×256 strip"]
+        C1 -->|"Area defects (Mura)"| C4["Crop: 256×256 region"]
+    end
+    
+    subgraph HighRes["🔬 High-Resolution Analysis"]
+        H1["Sub-pixel level inspection"]
+        H2["Edge sharpness analysis"]
+        H3["Pattern regularity check"]
+    end
+    
+    subgraph Integration["🧩 Context Integration"]
+        I1["Combine global position + local detail"]
+        I2["Cross-reference with panel schematic"]
+        I3["Manufacturing process correlation"]
+    end
+    
+    Global --> Crop --> HighRes --> Integration
+```
+
+### Example: Pixel Defect with Multi-Resolution
+
+```mermaid
+flowchart TD
+    A["Global View: 'Small dark spot detected in upper-left quadrant'"]
+    
+    A --> B["Crop Region: 64×64 pixels centered on anomaly"]
+    
+    B --> C{"High-Res Observation"}
+    C -->|"Single sub-pixel dark"| D1["Dead Sub-pixel"]
+    C -->|"3×3 pixel cluster dark"| D2["TFT Array Defect"]
+    C -->|"Irregular dark shape"| D3["Particle Contamination"]
+    
+    D1 --> E1["Root Cause: Source driver voltage failure\nfor single column at this position"]
+    D2 --> E2["Root Cause: Gate line partial short\ncausing localized row/column failure"]
+    D3 --> E3["Root Cause: Cleanroom contamination\nduring cell assembly process"]
+    
+    E1 --> F["Context: Upper-left position suggests\ndriver IC near edge - check COF bonding"]
+    E2 --> F
+    E3 --> F
+    
+    style B fill:#ffffcc
+    style C fill:#e6f3ff
+```
+
+### Resolution Strategy by Defect Type
+
+| Defect Category | Global View Purpose | Crop Strategy | High-Res Focus |
+|-----------------|---------------------|---------------|----------------|
+| Dead/Stuck Pixels | Location, clustering pattern | 32-64px around defect | Sub-pixel RGB analysis |
+| Line Defects | Full line trajectory | Narrow strip along line | Edge irregularity, width consistency |
+| Mura | Overall distribution | Multiple 256×256 samples | Intensity gradient analysis |
+| Contamination | Count, distribution | Individual particle crops | Shape, color, transparency |
+| Burn-in | Pattern recognition | UI element region | Differential degradation |
+
+### Confidence Adjustment Rules
+
+| Scenario | Confidence Modifier |
+|----------|---------------------|
+| Global + High-Res findings align | ↑ +20% confidence |
+| Findings contradict | ↓ -30% confidence, request additional crops |
+| High-Res reveals new details | Revise initial hypothesis |
+| Edge-of-crop artifacts visible | ↓ -10%, expand crop region |
