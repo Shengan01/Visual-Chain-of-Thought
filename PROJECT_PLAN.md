@@ -10,7 +10,7 @@
 
 ```mermaid
 flowchart LR
-    A["Defect Images"] --> B["Qwen-2-VL"]
+    A["Defect Images"] --> B["Qwen3-VL"]
     B --> C["CoT Reasoning"]
     C --> D["Root Cause"]
     
@@ -50,7 +50,7 @@ flowchart LR
 ```
 Week 1 Tasks:
 ├── [ ] Read TCL ArXiv report (2507.14430v1)
-├── [ ] Study Qwen-2-VL architecture paper
+├── [ ] Study Qwen3-VL architecture paper
 ├── [ ] Survey: "Chain-of-Thought in Vision-Language Models"
 │   └── Key papers: MM-CoT, Visual CoT, Multimodal-CoT
 ├── [ ] Survey: "Industrial Defect Detection with Deep Learning"
@@ -75,7 +75,7 @@ pip install wandb  # Experiment tracking
 pip install gradio  # Demo interface
 
 # Model download
-huggingface-cli download Qwen/Qwen2-VL-2B-Instruct
+huggingface-cli download Qwen/Qwen3-VL-2B-Instruct
 ```
 
 **Hardware Requirements**:
@@ -178,10 +178,10 @@ Provide detailed chain-of-thought reasoning for root cause analysis.
 
 **Zero-Shot Testing Protocol**:
 ```python
-# Evaluate Qwen-2-VL out-of-the-box
+# Evaluate Qwen3-VL out-of-the-box
 models_to_test = [
-    "Qwen/Qwen2-VL-2B-Instruct",
-    "Qwen/Qwen2-VL-7B-Instruct",  # If resources allow
+    "Qwen/Qwen3-VL-2B-Instruct",
+    "Qwen/Qwen3-VL-8B-Instruct",  # If resources allow
 ]
 
 metrics = [
@@ -451,7 +451,7 @@ After completing this project, add to your CV:
 
 ```
 Display-RCA: Multimodal CoT for Industrial Defect Analysis
-├── Fine-tuned Qwen-2-VL using LoRA for domain-specific visual reasoning
+├── Fine-tuned Qwen3-VL using LoRA for domain-specific visual reasoning
 ├── Created first reasoning-annotated dataset for display defect RCA
 ├── Achieved 85%+ defect classification with explainable CoT outputs  
 ├── Published at [VENUE] (if accepted)
@@ -462,7 +462,7 @@ Display-RCA: Multimodal CoT for Industrial Defect Analysis
 
 When applying, highlight:
 
-1. **Technical Alignment**: "Familiar with Qwen ecosystem through Qwen-2-VL fine-tuning project"
+1. **Technical Alignment**: "Familiar with Qwen ecosystem through Qwen3-VL fine-tuning project"
 2. **Domain Knowledge**: "Built comprehensive LCD/OLED defect taxonomy aligned with CSOT technologies"
 3. **Research Readiness**: "Project has publication-ready methodology with faithfulness analysis"
 4. **Practical Impact**: "Demonstrated path from fundamental research to applied productization"

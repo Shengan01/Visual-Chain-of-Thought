@@ -4,7 +4,7 @@ Template format for supervised fine-tuning of multimodal models on display defec
 
 ---
 
-## JSONL Conversation Format (Qwen-VL Compatible)
+## JSONL Conversation Format (Qwen3-VL Compatible)
 
 ### Standard Single-Image Format
 

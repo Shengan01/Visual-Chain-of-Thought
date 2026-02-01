@@ -694,20 +694,20 @@ flowchart TD
         G3["Note panel location context"]
     end
     
-    subgraph Crop["✂️ Crop Decision"]
+    subgraph Crop["Crop Decision"]
         C1{"Defect type requires\nmicroscopic analysis?"}
         C1 -->|"Pixel defects"| C2["Crop: 64×64 px region"]
         C1 -->|"Line defects"| C3["Crop: 256×64 or 64×256 strip"]
         C1 -->|"Area defects (Mura)"| C4["Crop: 256×256 region"]
     end
     
-    subgraph HighRes["🔬 High-Resolution Analysis"]
+    subgraph HighRes["High-Resolution Analysis"]
         H1["Sub-pixel level inspection"]
         H2["Edge sharpness analysis"]
         H3["Pattern regularity check"]
     end
     
-    subgraph Integration["🧩 Context Integration"]
+    subgraph Integration["Context Integration"]
         I1["Combine global position + local detail"]
         I2["Cross-reference with panel schematic"]
         I3["Manufacturing process correlation"]
